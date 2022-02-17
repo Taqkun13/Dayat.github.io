@@ -1,14 +1,16 @@
 <?php
+
 $statusMsg = '';
 $msgClass = '';
 if(isset($_POST['submit'])){
     // Get the submitted form data
     $email = $_POST['email'];
     $name = $_POST['name'];
+    $subject = $_POST['subject'];
     $message = $_POST['message'];
     
     // Cek apakah ada data yang belum diisi
-    if(!empty($email) && !empty($name) && !empty($message)){
+    if(!empty($email) && !empty($name) && !empty($subject) && !empty($message)){
         
         if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
             $statusMsg = 'Please enter your valid email.';
@@ -20,6 +22,7 @@ if(isset($_POST['submit'])){
             $htmlContent = '<h2> via Form Kontak Website</h2>
                 <h4>Name</h4><p>'.$name.'</p>
                 <h4>Email</h4><p>'.$email.'</p>
+                <h4>Subject</h4><p>'.$subject.'</p>
                 <h4>Message</h4><p>'.$message.'</p>';
             
             // Mengatur Content-Type header untuk mengirim email dalam bentuk HTML
@@ -43,4 +46,5 @@ if(isset($_POST['submit'])){
         $msgClass = 'errordiv';
     }
 }
+
 ?>
