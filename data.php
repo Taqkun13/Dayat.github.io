@@ -1,6 +1,6 @@
 <?php
 
-$host = '127.0.0.1';
+$host = 'http://192.168.43.48:8000/mysqladmin';
 $user = 'root';
 $pass = 'root';
 $dbase = 'data_komentar';
