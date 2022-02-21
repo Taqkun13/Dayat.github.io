@@ -3,7 +3,7 @@
 $host = '127.0.0.1';
 $user = 'root';
 $pass = 'root';
-$dbase = 'data';
+$dbase = 'data_komentar';
 $koneksi = mysqli_connect($host,$user,$pass,$dbase) or die(mysqli_connect_error());
 
 $name = $_POST['name'];
